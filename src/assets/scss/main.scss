@@ -1,0 +1,154 @@
+// Helpers
+@import "helpers/variables";
+@import "helpers/mixins";
+
+// Vendor (Вендорные стили. Например от плагинов)
+
+// Common (основные стили.)
+@import "common/default";
+@import "common/fonts";
+
+// Components (мелкие визуальные элементы)
+
+// Modules (большие куски. Шапка, футер, продукт)
+
+// Pages (стили, котрые нужно применить для конкретной страницы)
+@import "global/custom-variables";
+@import "global/functions";
+@import "global/bootstrap-variables";
+@import "global/mixins";
+@import "global/reboot";
+@import "global/type";
+@import "global/grid";
+@import "global/utilities";
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.wrapper {
+  max-width: 1220px;
+  width: 100%;
+  padding: 0 10px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+.vs__actions{
+  padding: 4px 16px 0 3px;
+}
+.vs__selected-options{
+  padding: 0 16px;
+}
+.vs__clear {
+  position: absolute;
+  right: 5px;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  z-index: 2;
+  top: 50%;
+  transform: translateY(-50%);
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/close.svg);
+    left: 0;
+    top: 0;
+  }
+
+  svg {
+    display: none;
+  }
+}
+
+.vs--searchable .vs__dropdown-toggle {
+  height: 56px;
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+  color: #828282;
+  background: #FFFFFF;
+  border: 1px solid #828282;
+  border-radius: 4px;
+}
+
+.vs--open .vs__selected {
+  opacity: 1 !important;
+  height: 48px !important;
+}
+
+.v-select ul li {
+  padding: 12px 18px;
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+  color: #000000;
+
+  &.active,
+  &:hover {
+    background: #F2E7FE;
+  }
+}
+
+.vs__dropdown-option--highlight,
+.vs__dropdown-option--selected {
+  background: #F2E7FE !important;
+}
+
+.vs__open-indicator {
+  height: 10px;
+  width: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  span {
+    position: absolute;
+    left: 0;
+  }
+}
+
+.form {
+  &-item {
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.15px;
+    color: #828282;
+    height: 56px;
+    position: relative;
+
+    &.open {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 16px;
+      letter-spacing: 0.4px;
+      color: rgba(0, 0, 0, 0.87);
+
+      .form-label {
+        top: 0;
+        transition: unset;
+
+      }
+    }
+  }
+
+  &-label {
+    position: absolute;
+    width: fit-content;
+    transform: translateY(-50%);
+    top: 50%;
+    padding: 0 4px;
+    z-index: 9;
+    background-color: #fff;
+    left: 16px;
+    transition: 0.3s;
+  }
+}
+
