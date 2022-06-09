@@ -1,5 +1,5 @@
 <template>
-  <h1 class="title">PAGE NOF FOUND!</h1>
+  <h1 class="title">PAGE NOF FOUND!  <router-link to="/">Go to home</router-link></h1>
 </template>
 
 <script>
